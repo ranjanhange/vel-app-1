@@ -11,15 +11,14 @@ pipeline {
 		
 				stage ('deploy'){
 							steps {		
-									sh "cp -r index.html /var/www/html/"
-							       		sh "chmod -R 777 /var/www/html/index.html"
+									echo "hello this is master branch"
 						}							
 				
 				}
 				
 				stage ('start'){
 							steps {
-									sh "service httpd start"
+									echo "this is master branch"
 						}							
 				
 				}
