@@ -9,16 +9,17 @@ pipeline {
 		
 		stages {
 		
-				stage ('stage-1'){
-							steps {
-									sh "mkdir test"
+				stage ('deploy'){
+							steps {		sh "rm -rf *"	
+									sh "cp -r index.html /var/www/html/"
+							       		sh "chmod -R 777 /var/www/html/index.html"
 						}							
 				
 				}
 				
-				stage ('stage-2'){
+				stage ('start'){
 							steps {
-									sh "mkdir folder1"
+									sh "service httpd start"
 						}							
 				
 				}
